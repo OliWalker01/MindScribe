@@ -44,6 +44,8 @@ public:
 	void MediumQuestion();
 	void HardQuestion();
 
-	void MediumSubtractQuestion();
-	void MediumAddQuestion();
+	void AddQuestion();
+	void SubtractQuestion();
+	void MultiplyQuestion();
+	void DivideQuestion();
 };

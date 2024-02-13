@@ -50,17 +50,7 @@ void AMathsQuestions::GenerateMathQuestion(const FString& Difficulty)
 
 void AMathsQuestions::EasyQuestion()
 {
-	mathSymbol = "+";
-
-	// Gets Random Values
-	srand(static_cast<unsigned int>(time(0)));
-	numberOne = rand() % 25;
-
-	srand(static_cast<unsigned int>(time(0)));
-	numberTwo = rand() % 10;
-
-	// Adds the Numbers Together to Get Target Number
-	targetNumber = numberOne + numberTwo;
+	AddQuestion();
 }
 
 void AMathsQuestions::MediumQuestion()
@@ -71,20 +61,37 @@ void AMathsQuestions::MediumQuestion()
 	switch (randomChance)
 	{
 		case(0):
-			MediumAddQuestion();
+			AddQuestion();
 			break;
 		case(1):
-			MediumSubtractQuestion();
+			SubtractQuestion();
 			break;
 	}
 }
 
 void AMathsQuestions::HardQuestion()
 {
+	srand(static_cast<unsigned int>(time(0)));
+	int randomChance = rand() & 3;
 
+	switch (randomChance)
+	{
+	case(0):
+		AddQuestion();
+		break;
+	case(1):
+		SubtractQuestion();
+		break;
+	case(2):
+		MultiplyQuestion();
+		break;
+	case(3):
+		DivideQuestion();
+		break;
+	}
 }
 
-void AMathsQuestions::MediumAddQuestion()
+void AMathsQuestions::AddQuestion()
 {
 	mathSymbol = "+";
 
@@ -97,7 +104,7 @@ void AMathsQuestions::MediumAddQuestion()
 	targetNumber = numberOne + numberTwo;
 }
 
-void AMathsQuestions::MediumSubtractQuestion()
+void AMathsQuestions::SubtractQuestion()
 {
 	mathSymbol = "-";
 
@@ -116,4 +123,30 @@ void AMathsQuestions::MediumSubtractQuestion()
 	}
 
 	targetNumber = numberOne - numberTwo;
+}
+
+void AMathsQuestions::MultiplyQuestion()
+{
+	mathSymbol = "x";
+
+	srand(static_cast<unsigned int>(time(0)));
+	numberOne = rand() % 10;
+
+	srand(static_cast<unsigned int>(time(0)));
+	numberTwo = rand() % 10;
+
+	targetNumber = numberOne * numberTwo;
+}
+
+void AMathsQuestions::DivideQuestion()
+{
+	mathSymbol = "/";
+
+	srand(static_cast<unsigned int>(time(0)));
+	numberOne = rand() % 10;
+
+	srand(static_cast<unsigned int>(time(0)));
+	targetNumber = rand() % numberOne;
+
+	numberTwo = numberOne * targetNumber;
 }
