@@ -39,7 +39,7 @@ void ASnap_It::BeginPlay()
 
     int n = sizeof(snap_Cards) / sizeof(snap_Cards[0]);
 
-    ShuffleCards(snap_Cards, n);
+    ShuffleCards();
 }
 
 // Called every frame
@@ -49,15 +49,26 @@ void ASnap_It::Tick(float DeltaTime)
 
 }
 
-void ASnap_It::ShuffleCards(FString arr[], int n)
+void ASnap_It::ShuffleCards()
 {
     AllCardsUsed = false;
 
-    unsigned seed = 0;
+    const int ARRAY_SIZE = 18;
+    srand(static_cast<unsigned int>(time(0)));
 
-    shuffle(arr, arr + n, default_random_engine(seed));
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        int index = rand() % ARRAY_SIZE;
 
-    for (int i = 0; i < n; ++i) { cards_shuffled[i] = arr[i]; }
+        FString temp = snap_Cards[i];
+        snap_Cards[i] = snap_Cards[index];
+        snap_Cards[index] = temp;
+    }
+
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        cards_shuffled[i] = snap_Cards[i];
+    }
 }
 
 FString ASnap_It::NextCard()
@@ -73,7 +84,5 @@ void ASnap_It::ReshuffleCards()
 {
     CardNumber = 0;
 
-    int n = sizeof(cards_shuffled) / sizeof(cards_shuffled[0]);
-
-    ShuffleCards(cards_shuffled, n);
+    ShuffleCards();
 }

@@ -6,10 +6,8 @@
 #include "GameFramework/Actor.h"
 #include <iostream>
 #include "string.h"
-#include <algorithm>
-#include <stdlib.h>
-#include <__msvc_chrono.hpp>
-#include <random>
+#include <ctime>
+#include <cstdlib>
 #include "Snap_It.generated.h"
 
 using namespace std;
@@ -34,7 +32,7 @@ public:
 	FString snap_Cards[17];
 	FString cards_shuffled[17];
 
-	void ShuffleCards(FString arr[], int n);
+	void ShuffleCards();
 
 	UPROPERTY(BlueprintReadWrite, Category = Games)
 		FString Picked_Card;
