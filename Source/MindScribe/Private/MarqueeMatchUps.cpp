@@ -15,27 +15,16 @@ AMarqueeMatchUps::AMarqueeMatchUps()
 void AMarqueeMatchUps::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	MaxCards = 1;
 }
 
 // Called every frame
 void AMarqueeMatchUps::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-}
-
-// Generates a Pattern
-FString AMarqueeMatchUps::GeneratePattern()
-{
-	PickShape();
-
-	return Shape;
 }
 
 // Picks a Shape to Add to Pattern
-void AMarqueeMatchUps::PickShape()
+FString AMarqueeMatchUps::PickShape()
 {
 	srand(static_cast<unsigned int>(time(0)));
 	int random = rand() % 4;
@@ -61,4 +50,6 @@ void AMarqueeMatchUps::PickShape()
 		Shape = NULL;
 		break;
 	}
+
+	return Shape;
 }

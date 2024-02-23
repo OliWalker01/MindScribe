@@ -26,14 +26,8 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(BlueprintReadWrite, Category = Game)
-		int MaxCards;
-	UPROPERTY(BlueprintReadWrite, Category = Game)
-		TArray<FString> Pattern;
-	UPROPERTY(BlueprintReadWrite, Category = Game)
 		FString Shape;
 
 	UFUNCTION(BlueprintCallable, Category = Game)
-		FString GeneratePattern();
-
-	void PickShape();
+		FString PickShape();
 };
