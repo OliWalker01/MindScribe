@@ -97,3 +97,8 @@ void ASudoku::QuitGame()
 		PlayerController->ConsoleCommand("quit");
 	}
 }
+
+void ASudoku::AddToNotedNumbers(FString ActiveCard)
+{
+
+}

@@ -35,6 +35,15 @@ public:
 		int A4;
 
 	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> A1NotedNumbers;
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> A2NotedNumbers;
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> A3NotedNumbers;
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> A4NotedNumbers;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
 		bool A1Active;
 	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
 		bool A2Active;
@@ -52,6 +61,16 @@ public:
 		int B3;
 	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
 		int B4;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> B1NotedNumbers;
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> B2NotedNumbers;
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> B3NotedNumbers;
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> B4NotedNumbers;
+
 
 	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
 		bool B1Active;
@@ -73,6 +92,15 @@ public:
 		int C4;
 
 	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> C1NotedNumbers;
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> C2NotedNumbers;
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> C3NotedNumbers;
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> C4NotedNumbers;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
 		bool C1Active;
 	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
 		bool C2Active;
@@ -92,6 +120,16 @@ public:
 		int D4;
 
 	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> D1NotedNumbers;
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> D2NotedNumbers;
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> D3NotedNumbers;
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		TArray <int> D4NotedNumbers;
+
+
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
 		bool D1Active;
 	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
 		bool D2Active;
@@ -102,6 +140,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Sudoku")
 		void PickSudokuEasyQuestion();
+
+	UFUNCTION(BlueprintCallable, Category = "Sudoku")
+		void AddToNotedNumbers(FString ActiveCard);
 
 	void SudokuEasyQuestionOne();
 	void SudokuEasyQuestionTwo();
