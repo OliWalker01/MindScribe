@@ -15,7 +15,7 @@ ASudoku::ASudoku()
 void ASudoku::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 // Called every frame
@@ -27,6 +27,8 @@ void ASudoku::Tick(float DeltaTime)
 
 void ASudoku::PickSudokuEasyQuestion()
 {
+	numberOfLives = 3;
+
 	/*srand(static_cast<unsigned int>(time(0)));
 	int questionNumber = rand() & 3;
 
@@ -86,6 +88,8 @@ void ASudoku::SudokuEasyQuestionOne()
 	D2Active = true;
 	D3Active = false;
 	D4Active = false;
+
+	correctAnswers = 4;
 }
 
 void ASudoku::QuitGame()

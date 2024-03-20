@@ -128,7 +128,6 @@ public:
 	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
 		TArray <int> D4NotedNumbers;
 
-
 	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
 		bool D1Active;
 	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
@@ -137,6 +136,12 @@ public:
 		bool D3Active;
 	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
 		bool D4Active;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		int correctAnswers;
+
+	UPROPERTY(BlueprintReadWrite, Category = "Sudoku")
+		int numberOfLives;
 
 	UFUNCTION(BlueprintCallable, Category = "Sudoku")
 		void PickSudokuEasyQuestion();
