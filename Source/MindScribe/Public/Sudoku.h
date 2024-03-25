@@ -285,6 +285,9 @@ public:
 	void SudokuEasyQuestionFour();
 
 	void SudokuMediumQuestionOne();
+	void SudokuMediumQuestionTwo();
+	void SudokuMediumQuestionThree();
+	void SudokuMediumQuestionFour();
 
 	void QuitGame();
 };
