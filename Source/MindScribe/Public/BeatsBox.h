@@ -23,4 +23,9 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	int randomInt;
+	FString pianoKey;
+
+	UFUNCTION(BlueprintCallable, Category = "Beats Box")
+		FString PickPianoKey();
 };
