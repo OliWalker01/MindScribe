@@ -225,12 +225,12 @@ void ASudoku::SudokuEasyQuestionFour()
 	C2Active = true;
 	C3Active = false;
 	C4Active = true;
-	D1Active = true;
-	D2Active = false;
-	D3Active = false;
-	D4Active = true;
+	D1Active = false;
+	D2Active = true;
+	D3Active = true;
+	D4Active = false;;
 
-	correctAnswers = 4;
+	correctAnswers = 5;
 }
 
 void ASudoku::QuitGame()
