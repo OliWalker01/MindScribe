@@ -28,7 +28,7 @@ void ABeatsBox::Tick(float DeltaTime)
 FString ABeatsBox::PickPianoKey()
 {
 	srand(static_cast<unsigned int>(time(0)));
-	randomInt = rand() % 4;
+	randomInt = rand() % 5;
 
 	switch (randomInt)
 	{
@@ -42,6 +42,9 @@ FString ABeatsBox::PickPianoKey()
 		pianoKey = "C";
 		break;
 	case 4:
+		pianoKey = "D";
+		break;
+	default:
 		pianoKey = "D";
 		break;
 	}
